@@ -23,8 +23,10 @@
 		6F044E7E18BD73B80032E69F /* REMS_CustomerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F044E7D18BD73B80032E69F /* REMS_CustomerTests.m */; };
 		6F044E8918BD878B0032E69F /* CustomerPurchaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F044E8818BD878A0032E69F /* CustomerPurchaseTableViewController.m */; };
 		6F044E8F18BD88400032E69F /* CustomerPurchaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F044E8E18BD88400032E69F /* CustomerPurchaseTableViewCell.m */; };
-		6F044E9218BD8E3B0032E69F /* CustomerReservationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F044E9118BD8E3B0032E69F /* CustomerReservationTableViewCell.m */; };
 		6F044E9518BD8E590032E69F /* CustomerReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F044E9418BD8E590032E69F /* CustomerReservationViewController.m */; };
+		6FE5BE7D18F3B5B0006279FA /* CustomerMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5BE7C18F3B5B0006279FA /* CustomerMenuTableViewController.m */; };
+		6FE5BE8018F3BAA6006279FA /* CustomerContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5BE7F18F3BAA6006279FA /* CustomerContactViewController.m */; };
+		6FE5BE8218F3BB40006279FA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE5BE8118F3BB40006279FA /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +63,13 @@
 		6F044E8818BD878A0032E69F /* CustomerPurchaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerPurchaseTableViewController.m; sourceTree = "<group>"; };
 		6F044E8D18BD88400032E69F /* CustomerPurchaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerPurchaseTableViewCell.h; sourceTree = "<group>"; };
 		6F044E8E18BD88400032E69F /* CustomerPurchaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerPurchaseTableViewCell.m; sourceTree = "<group>"; };
-		6F044E9018BD8E3B0032E69F /* CustomerReservationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerReservationTableViewCell.h; sourceTree = "<group>"; };
-		6F044E9118BD8E3B0032E69F /* CustomerReservationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerReservationTableViewCell.m; sourceTree = "<group>"; };
 		6F044E9318BD8E590032E69F /* CustomerReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerReservationViewController.h; sourceTree = "<group>"; };
 		6F044E9418BD8E590032E69F /* CustomerReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerReservationViewController.m; sourceTree = "<group>"; };
+		6FE5BE7B18F3B5B0006279FA /* CustomerMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerMenuTableViewController.h; sourceTree = "<group>"; };
+		6FE5BE7C18F3B5B0006279FA /* CustomerMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerMenuTableViewController.m; sourceTree = "<group>"; };
+		6FE5BE7E18F3BAA6006279FA /* CustomerContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerContactViewController.h; sourceTree = "<group>"; };
+		6FE5BE7F18F3BAA6006279FA /* CustomerContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerContactViewController.m; sourceTree = "<group>"; };
+		6FE5BE8118F3BB40006279FA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FE5BE8218F3BB40006279FA /* MapKit.framework in Frameworks */,
 				6F044E5518BD73B80032E69F /* CoreGraphics.framework in Frameworks */,
 				6F044E5718BD73B80032E69F /* UIKit.framework in Frameworks */,
 				6F044E5318BD73B80032E69F /* Foundation.framework in Frameworks */,
@@ -113,6 +119,7 @@
 		6F044E5118BD73B80032E69F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6FE5BE8118F3BB40006279FA /* MapKit.framework */,
 				6F044E5218BD73B80032E69F /* Foundation.framework */,
 				6F044E5418BD73B80032E69F /* CoreGraphics.framework */,
 				6F044E5618BD73B80032E69F /* UIKit.framework */,
@@ -127,8 +134,10 @@
 				6F044E6118BD73B80032E69F /* CustomerAppDelegate.h */,
 				6F044E6218BD73B80032E69F /* CustomerAppDelegate.m */,
 				6F044E6418BD73B80032E69F /* Main.storyboard */,
-				6F044E9018BD8E3B0032E69F /* CustomerReservationTableViewCell.h */,
-				6F044E9118BD8E3B0032E69F /* CustomerReservationTableViewCell.m */,
+				6FE5BE7E18F3BAA6006279FA /* CustomerContactViewController.h */,
+				6FE5BE7F18F3BAA6006279FA /* CustomerContactViewController.m */,
+				6FE5BE7B18F3B5B0006279FA /* CustomerMenuTableViewController.h */,
+				6FE5BE7C18F3B5B0006279FA /* CustomerMenuTableViewController.m */,
 				6F044E9318BD8E590032E69F /* CustomerReservationViewController.h */,
 				6F044E9418BD8E590032E69F /* CustomerReservationViewController.m */,
 				6F044E8D18BD88400032E69F /* CustomerPurchaseTableViewCell.h */,
@@ -272,10 +281,11 @@
 			files = (
 				6F044E8918BD878B0032E69F /* CustomerPurchaseTableViewController.m in Sources */,
 				6F044E6318BD73B80032E69F /* CustomerAppDelegate.m in Sources */,
-				6F044E9218BD8E3B0032E69F /* CustomerReservationTableViewCell.m in Sources */,
 				6F044E9518BD8E590032E69F /* CustomerReservationViewController.m in Sources */,
 				6F044E6918BD73B80032E69F /* CustomerViewController.m in Sources */,
 				6F044E5F18BD73B80032E69F /* main.m in Sources */,
+				6FE5BE7D18F3B5B0006279FA /* CustomerMenuTableViewController.m in Sources */,
+				6FE5BE8018F3BAA6006279FA /* CustomerContactViewController.m in Sources */,
 				6F044E8F18BD88400032E69F /* CustomerPurchaseTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +495,7 @@
 				6F044E8318BD73B80032E69F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F044E8418BD73B80032E69F /* Build configuration list for PBXNativeTarget "REMS-CustomerTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +504,7 @@
 				6F044E8618BD73B80032E69F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

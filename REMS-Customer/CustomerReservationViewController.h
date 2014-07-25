@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomerReservationViewController : UITableViewController
+@interface CustomerReservationViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+    @property (nonatomic, strong) IBOutlet UITableView *tableView1;
+    @property (nonatomic, strong) NSMutableArray *reservationArray;
+
+
 
 @end

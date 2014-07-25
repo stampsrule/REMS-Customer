@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomerPurchaseTableViewController : UITableViewController
+@property (nonatomic, strong) NSMutableArray *purchaseArray;
 
 @end

@@ -1,20 +1,20 @@
 //
-//  CustomerPurchaseTableViewController.m
+//  CustomerMenuTableViewController.m
 //  REMS-Customer
 //
-//  Created by Daniel Bell on 2/25/2014.
+//  Created by Daniel Bell on 2014-04-07.
 //  Copyright (c) 2014 Daniel Bell. All rights reserved.
 //
 
-#import "CustomerPurchaseTableViewController.h"
+#import "CustomerMenuTableViewController.h"
 
-@interface CustomerPurchaseTableViewController ()
+@interface CustomerMenuTableViewController ()
 
 @end
 
-@implementation CustomerPurchaseTableViewController
+@implementation CustomerMenuTableViewController
+@synthesize menuArray;
 
-@synthesize purchaseArray;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -27,9 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    NSString *url = @"http://austhaus.com:5000/CPSC471/getPurchases.php";
-    NSString *post = @"card=3";
+    
+    NSString *url = @"http://austhaus.com:5000/CPSC471/getMenu.php";
+    NSString *post = @"";
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -45,8 +45,10 @@
     NSArray *results = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers|NSJSONReadingMutableLeaves error:&error] : nil;
     
     if (error) NSLog(@"[%@ %@] JSON error: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error.localizedDescription);
-     purchaseArray=[[NSMutableArray alloc] init];
-    [purchaseArray addObjectsFromArray:results];
+    menuArray=[[NSMutableArray alloc] init];
+    [menuArray addObjectsFromArray:results];
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,17 +61,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return self.purchaseArray.count;
+
+
+    return self.menuArray.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -81,13 +82,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Configure the cell... setting the text of our cell's label
-    NSDictionary *myreservations=[[NSDictionary alloc] initWithDictionary:[purchaseArray objectAtIndex:indexPath.row]];
-    NSString* mylabel=[NSString stringWithFormat:@"%@ tip: %@ balance: %@",[myreservations objectForKey:@"datetime"],[myreservations objectForKey:@"tip"],[myreservations objectForKey:@"total"]];
-    cell.textLabel.text =mylabel;
-    //cell.detailTextLabel.text=[myreservations objectForKey:@"notes"];
+    NSDictionary *mymenu=[[NSDictionary alloc] initWithDictionary:[menuArray objectAtIndex:indexPath.row]];
+    NSString *label=[NSString stringWithFormat:@"%@ %@ %@", [mymenu objectForKey:@"itemtype"],[mymenu objectForKey:@"name"],[mymenu objectForKey:@"description"]];
+    cell.textLabel.text =label;
     
     return cell;
+
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -105,8 +107,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
@@ -131,13 +132,12 @@
 /*
 #pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
+// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
- */
+*/
 
 @end
